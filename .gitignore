@@ -1,0 +1,5 @@
+/target
+/*/target
+/*/project/target
+/project/sbt-*.jar
+/project/checkstyle-*.jar
