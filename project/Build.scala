@@ -90,7 +90,7 @@ object Build extends Build {
   )
 
   lazy val baseSettings: Seq[Setting[_]] = Seq(
-    version := "1.0",
+    version := "1.0.1-SNAPSHOT",
     organization := "edu.gatech.gtri.typesafeconfig-extensions",
     homepage := Some(url(
       "https://github.com/gtri/typesafeconfig-extensions"
