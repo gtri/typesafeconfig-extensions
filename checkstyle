@@ -1,0 +1,13 @@
+VERSION="5.6"
+JAR="project/checkstyle-$VERSION-all.jar"
+URL="http://downloads.sourceforge.net/project/checkstyle/checkstyle/$VERSION/checkstyle-$VERSION-bin.tar.gz"
+
+if [ ! -f "$JAR" ]; then
+  curl -L "$URL" | tar -C project -zx checkstyle-$VERSION/checkstyle-$VERSION-all.jar --strip 1
+fi
+
+java -jar "$JAR" -c project/checkstyle.xml \
+  -r factory/src/main/java \
+  -r jndi/src/main/java \
+  -r for-webapps/src/main/java \
+  -r internal/src/main/java
