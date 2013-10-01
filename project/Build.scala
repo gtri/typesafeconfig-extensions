@@ -131,15 +131,18 @@ object Build extends Build {
 
   lazy val scalajHttp = "org.scalaj" % "scalaj-http_2.10" % "0.3.10"
 
-  lazy val unpublished: Seq[Setting[_]] = Seq(
-    publishArtifact := false,
-    publishArtifact in makePom := false,
-    publish := {},
-    publishLocal := {}
-  )
+  lazy val unpublished: Seq[Setting[_]] = {
+    Seq(
+      publishArtifact := false,
+      publishArtifact in makePom := false,
+      publish := {},
+      publishLocal := {}
+    )
+  }
 
   lazy val published: Seq[Setting[_]] = Seq(
     publishMavenStyle := true,
+    publish <<= com.typesafe.sbt.pgp.PgpKeys.publishSigned,
     publishTo := {
       val nexus = "https://oss.sonatype.org/"
       if (version.value.trim.endsWith("SNAPSHOT"))

@@ -137,8 +137,39 @@ val e = b + ("F" -> "G")                     // A: 7, F: G
 val f = a - "A"                              // D: E
 ```
 
-## Build scripts
+## Information for developers
+
+### Build scripts
 
 `./sbt` to launch the build tool (SBT).
 
 `./checkstyle` to run Checkstyle.
+
+### Deploying
+
+#### Setting up SBT
+
+Add your Sonatype login to `~/.sbt/0.13/sonatype.sbt`:
+
+```
+credentials += Credentials(
+  "Sonatype Nexus Repository Manager", "oss.sonatype.org",
+  "your-username", "your-password")
+```
+
+Optionally, include the passphrase for the PGP key.
+
+```
+pgpPassphrase := Some("your-pgp-passphrase".toArray)
+```
+
+#### Publishing to Sonatype
+
+`./sbt publish`
+
+This creates a staging repository at
+https://oss.sonatype.org/index.html#stagingRepositories
+
+*Close* the staging repository.
+
+If all is well, you can then *Release* the repository.
