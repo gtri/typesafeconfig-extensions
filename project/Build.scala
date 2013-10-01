@@ -155,16 +155,14 @@ object Build extends Build {
       </scm>
       <developers>
         <developer>
-          <id>chris-martin</id>
           <name>Chris Martin</name>
-          <email>chris.martin@gtri.gatech.edu</email>
+          <email>chris.martin@gatech.edu</email>
         </developer>
       </developers>
       <contributors>
         <contributor>
-          <id>kelseyfrancis</id>
           <name>Kelsey Francis</name>
-          <email>kelsey.francis@gtri.gatech.edu</email>
+          <email>francis@gatech.edu</email>
         </contributor>
       </contributors>
     }
