@@ -28,14 +28,14 @@
 
   <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
     <Arg/>
-    <Arg>config file</Arg>
+    <Arg>webapp.config.file</Arg>
     <Arg type="java.lang.String">for-webapps/src/test/webapp/conf/jetty-webapp-test.conf</Arg>
     <Arg type="boolean">true</Arg>
   </New>
 
   <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
     <Arg/>
-    <Arg>config directory</Arg>
+    <Arg>webapp.config.directory</Arg>
     <Arg type="java.lang.String">${jetty conf dir}</Arg>
     <Arg type="boolean">true</Arg>
   </New>
