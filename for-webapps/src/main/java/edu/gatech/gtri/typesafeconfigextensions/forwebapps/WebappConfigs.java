@@ -26,7 +26,6 @@ import edu.gatech.gtri.typesafeconfigextensions.factory.PathSpecification;
 
 import javax.servlet.ServletContext;
 
-import static edu.gatech.gtri.typesafeconfigextensions.forwebapps.JndiConfigSource.PathMapping.jndiPathMapping;
 import static edu.gatech.gtri.typesafeconfigextensions.forwebapps.JndiConfigSourceImpl.defaultJndiConfigSource;
 import static edu.gatech.gtri.typesafeconfigextensions.internal.Check.checkNotNull;
 
@@ -45,11 +44,11 @@ public final class WebappConfigs {
      * <ul>
      *   <li>System properties</li>
      *   <li>File:
-     *     {@code JNDI(config directory)/[servlet context path]}</li>
+     *     {@code JNDI(webapp.config.directory)/[servlet context path]}</li>
      *   <li>File:
      *     {@code ${webapp.config.directory}/[servlet context path]}</li>
-     *   <li>File: {@code JNDI(config file)}</li>
-     *   <li>File: {@code ${webapp.config file}}</li>
+     *   <li>File: {@code JNDI(webapp.config.file)}</li>
+     *   <li>File: {@code ${webapp.config.file}}</li>
      *   <li>Classpath resource: {@code application.conf}</li>
      *   <li>Classpath resource: {@code resource.conf}</li>
      * </ul>
@@ -87,18 +86,11 @@ public final class WebappConfigs {
         return ConfigFactory.emptyConfigFactory()
             .bindDefaults()
             .withSources(
-                jndi().withPathMappings(
-                    jndiPathMapping(
-                        "config directory",
-                        "webapp.config.directory"
-                    ),
-                    jndiPathMapping(
-                        "config file",
-                        "webapp.config.file"
-                    )
-                ),
+                jndi(),
                 ConfigFactory.systemProperties(),
+                servletContextDirectory().byKey("jndi.webapp.config.directory"),
                 servletContextDirectory().byKey("webapp.config.directory"),
+                ConfigFactory.configFile().byKey("jndi.webapp.config.file"),
                 ConfigFactory.configFile().byKey("webapp.config.file"),
                 ConfigFactory.classpathResource("application"),
                 ConfigFactory.classpathResource("reference")

@@ -97,9 +97,9 @@ ConfigFactory factory = webappConfigFactory(servletContext);
 This factory loads these configuration sources, in order from highest to lowest precedence:
 
 * System properties
-* File: `JNDI(config directory)/[servlet context path]`
+* File: `JNDI(webapp.config.directory)/[servlet context path]`
 * File: `${webapp.config.directory}/[servlet context path]`
-* File: `JNDI(config file)`
+* File: `JNDI(webapp.config.file)`
 * File: `${webapp.config file}`
 * Classpath resource: `application.conf`
 * Classpath resource: `resource.conf`
@@ -111,7 +111,7 @@ You might set up `server.xml` in a Tomcat installation like this, for example:
 
 ```
 <Context path="/myApplication/apiServer" docBase="/users/chris/myAppApiServer">
-  <Environment name="config directory" type="java.lang.String" value="${CATALINA_BASE}/conf"/>
+  <Environment name="webapp.config.directory" type="java.lang.String" value="${CATALINA_BASE}/conf"/>
 </Context>
 ```
 
