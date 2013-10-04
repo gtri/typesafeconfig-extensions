@@ -2,6 +2,9 @@
 
 Libraries supporting [Typesafe Config](https://github.com/typesafehub/config).
 
+This project's release artifacts are available in the Maven
+[Central Repository](http://search.maven.org/#search%7Cga%7C1%7Cg%3Aedu.gatech.gtri.typesafeconfig-extensions).
+
 ## Components
 
 ### Factory
@@ -57,6 +60,16 @@ Now someone can launch your application with the JVM flag
 `-DexampleApp.config.file=$HOME/myAppSettings`, and the contents of
 `$HOME/myAppSettings.conf` will be loaded into the configuration.
 
+#### Maven dependency
+
+```
+<dependency>
+  <groupId>edu.gatech.gtri.typesafeconfig-extensions</groupId>
+  <artifactId>typesafeconfig-factory</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
 ### JNDI
 
 **typesafeconfig-jndi** converts a JNDI context into a `Config` object so you'll never have
@@ -78,6 +91,16 @@ To just retrieve a JNDI variable named `abc` from the initial context:
 
 ```
 String configValue = jndiContext().toConfig().getString("abc");
+```
+
+#### Maven dependency
+
+```
+<dependency>
+  <groupId>edu.gatech.gtri.typesafeconfig-extensions</groupId>
+  <artifactId>typesafeconfig-jndi</artifactId>
+  <version>1.0</version>
+</dependency>
 ```
 
 ### For Webapps
@@ -120,6 +143,17 @@ You might set up `server.xml` in a Tomcat installation like this, for example:
 This web application's `ConfigFactory` would then include configuration loaded from
 `$CATALINA_BASE/conf/myApplication/apiServer.conf`.
 
+#### Maven dependency
+
+
+```
+<dependency>
+  <groupId>edu.gatech.gtri.typesafeconfig-extensions</groupId>
+  <artifactId>typesafeconfig-for-webapps</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
 ### For Scala
 
 **typesafeconfig-for-scala** adds some sugar to help use the Config library in Scala.
@@ -135,6 +169,13 @@ val c = Seq("A" -> 4, "B" -> "C").toConfig   // A: 4, B: C
 val d = c ++ b                               // A: 7, B: C
 val e = b + ("F" -> "G")                     // A: 7, F: G
 val f = a - "A"                              // D: E
+```
+
+#### SBT dependency
+
+```
+libraryDependencies += "edu.gatech.gtri.typesafeconfig-extensions" %
+                       "typesafeconfig-for-scala_2.10" % "1.0"
 ```
 
 ## Information for developers
