@@ -92,9 +92,9 @@ object Build extends Build {
   lazy val baseSettings: Seq[Setting[_]] = Seq(
     version := "1.0.1-SNAPSHOT",
     organization := "edu.gatech.gtri.typesafeconfig-extensions",
-    homepage := Some(url(
-      "https://github.com/gtri/typesafeconfig-extensions"
-    )),
+    organizationName := "Georgia Tech Research Institute, CTISL",
+    organizationHomepage := Some(url("http://gtri.gatech.edu/ctisl")),
+    homepage := Some(url("https://github.com/gtri/typesafeconfig-extensions")),
     licenses := Seq("The Apache Software License, Version 2.0" ->
       url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     scalaVersion := "2.10.0",
