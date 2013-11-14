@@ -115,7 +115,7 @@ object Build extends Build {
 
   lazy val typesafeConfig = "com.typesafe" % "config" % "1.0.2"
 
-  lazy val servletApi = "javax.servlet" % "servlet-api" % "2.5"
+  lazy val servletApi = "javax.servlet" % "servlet-api" % "2.5" % "provided"
 
   lazy val specs2: Seq[Setting[_]] = Seq(
     libraryDependencies += "org.specs2" % "specs2_2.10" % "2.2.1" % "test",
