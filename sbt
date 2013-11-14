@@ -1,3 +1,5 @@
+#!/bin/bash
+
 VERSION="0.13.0"
 JAR="project/sbt-launch-$VERSION.jar"
 URL="http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/$VERSION/sbt-launch.jar"
