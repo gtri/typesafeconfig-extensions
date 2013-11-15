@@ -94,7 +94,7 @@ object Build extends Build {
   )
 
   lazy val baseSettings: Seq[Setting[_]] = Seq(
-    version := "1.1",
+    version := "1.1.1-SNAPSHOT",
     organization := "edu.gatech.gtri.typesafeconfig-extensions",
     organizationName := "Georgia Tech Research Institute, CTISL",
     organizationHomepage := Some(url("http://gtri.gatech.edu/ctisl")),
