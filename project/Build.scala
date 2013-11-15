@@ -73,8 +73,12 @@ object Build extends Build {
       description := """
         |A sensible default configuration factory for a web application.
       """.stripMargin.trim,
-      libraryDependencies ++= Seq(servletApi, typesafeConfig),
-      libraryDependencies ++= Seq(jettyPlus, scalajHttp).map(_ % "test")
+      libraryDependencies ++= Seq(
+        typesafeConfig,
+        servletApi % "provided,optional",
+        jettyPlus % "test",
+        scalajHttp % "test"
+      )
     ): _*)
   )
 
