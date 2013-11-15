@@ -66,7 +66,7 @@ Now someone can launch your application with the JVM flag
 <dependency>
   <groupId>edu.gatech.gtri.typesafeconfig-extensions</groupId>
   <artifactId>typesafeconfig-factory</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
@@ -99,7 +99,7 @@ String configValue = jndiContext().toConfig().getString("abc");
 <dependency>
   <groupId>edu.gatech.gtri.typesafeconfig-extensions</groupId>
   <artifactId>typesafeconfig-jndi</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
@@ -150,7 +150,7 @@ This web application's `ConfigFactory` would then include configuration loaded f
 <dependency>
   <groupId>edu.gatech.gtri.typesafeconfig-extensions</groupId>
   <artifactId>typesafeconfig-for-webapps</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
@@ -175,7 +175,7 @@ val f = a - "A"                              // D: E
 
 ```
 libraryDependencies += "edu.gatech.gtri.typesafeconfig-extensions" %
-                       "typesafeconfig-for-scala_2.10" % "1.0"
+                       "typesafeconfig-for-scala_2.10" % "1.1"
 ```
 
 ## Information for developers
