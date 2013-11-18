@@ -13,7 +13,8 @@ This project's release artifacts are available in the Maven
 concisely express how you want all sources of configuration data to be aggregated.
 
 ```
-import static edu.gatech.gtri.typesafeconfigextensions.factory.*;
+import edu.gatech.gtri.typesafeconfigextensions.factory.*;
+import static edu.gatech.gtri.typesafeconfigextensions.factory.ConfigFactory.*;
 ```
 
 A standard configuration loader can be defined as follows.
