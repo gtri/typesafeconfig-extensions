@@ -126,7 +126,7 @@ This factory loads these configuration sources, in order from highest to lowest 
 * File: `JNDI(webapp.config.file)`
 * File: `${webapp.config file}`
 * Classpath resource: `application.conf`
-* Classpath resource: `resource.conf`
+* Classpath resource: `reference.conf`
 
 `JNDI(x)` refers to the JNDI variable named `x`, `[servlet context path]` is the value of
 `servletContext.getContextPath()`, and `${x}` denotes the value of the `Config` at path `x`.
